@@ -33,4 +33,3 @@ def guessing_game():
             print(answer)
 
 
-guessing_game()
