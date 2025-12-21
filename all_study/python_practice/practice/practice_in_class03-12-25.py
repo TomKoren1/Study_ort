@@ -32,4 +32,21 @@ def guessing_game():
                         answer+='-'
             print(answer)
 
+def charnum_in_strlist(l):
+    check=True
+    for index,s in enumerate(l):
+        if len(l)>26 or chr(ord('a')+index) not in s:
+            check=False
+    print(check)
+
+def all_chars_in_all_str(l):
+    all_letters=l[0]
+    check=True
+    for s1 in l:
+        for ch in s1:
+            if(ch not in all_letters):
+                check=False
+        if(len(all_letters)!= len(s1)):
+            check=False
+    print(check)
 
