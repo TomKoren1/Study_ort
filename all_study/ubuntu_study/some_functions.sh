@@ -124,7 +124,9 @@ process_func(){
 	do
 		t=$(ps $pid | tr '\n' '*' | cut -d'*' -f2)
 		if [ -z "$t" ];then
-			echo "no pid $pid or terminated" | ssmtp -v dingdongtaken@gmail.com
+			for mail in $(cat mails.txt); do
+				echo "no pid $pid or terminated" | ssmtp -v $mail
+			done
 			return 0
 		else
 			echo "$t"
