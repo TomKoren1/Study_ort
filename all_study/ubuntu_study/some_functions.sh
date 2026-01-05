@@ -116,3 +116,22 @@ findLine(){
 	done
 
 }
+
+process_func(){
+	pid=$1
+	echo "$pid"
+	while true
+	do
+		t=$(ps $pid | tr '\n' '*' | cut -d'*' -f2)
+		if [ -z "$t" ];then
+			for mail in $(cat mails.txt); do
+				echo "no pid $pid or terminated" | ssmtp -v $mail
+			done
+			return 0
+		else
+			echo "$t"
+		fi
+		sleep 3
+	done
+
+}
