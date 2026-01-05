@@ -72,8 +72,22 @@ def sort_matrix_by_sum2(matrix):
                     arr[i]=arr[j]
                     arr[j]=temp
 
-matrix=[[100,2],[200,3],[5,1]]
-print_matrix(matrix)
-sort_matrix_by_sum2(matrix)
-print_matrix(matrix)
 
+
+def paint_mat(mat,i,j,n):
+    temp=mat[i][j]
+    mat[i][j]=n
+    for num1 in range(-1,2):
+        for num2 in range(-1,2):
+            if 0<=i+num1< len(mat) and 0<=j+num2<len(mat[i+num1]):
+                if mat[i+num1][j+num2]==temp:
+                    paint_mat(mat,i+num1,j+num2,n)
+
+
+mat=[
+    [3,3,3],
+    [3,2,3],
+    [1,2,3]
+]
+paint_mat(mat,1,2,5)
+print_matrix(mat)
