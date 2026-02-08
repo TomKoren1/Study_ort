@@ -1,4 +1,4 @@
-def ex1a(s):
+def ex1a(s): #test ci
     count=0
     for i,c in enumerate(s):
         if c=='a':
