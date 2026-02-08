@@ -39,6 +39,11 @@ class dog:
         self.name=name
         self.color='black'
         self.geza=''
+    def same_name(self,other):
+        return other.name==self.name
+
+
+
 
 class dogs:
     def __init__(self):
@@ -53,6 +58,35 @@ class dogs:
 
 
 
+
+def print_names(self):
+    for brand in self.brands:
+        flag_m=False
+        flag_w=False
+        flag_k=False
+        for shirt in self.shirts:
+            if shirt.brand==brand:
+                if shirt.type=='M':
+                    flag_m=True
+                if shirt.type=='W':
+                    flag_w=True
+                if shirt.type=='K':
+                    flag_k=True
+        if flag_k and flag_m and flag_w:
+            print(brand)
+
+
+
+arr=[1,1,2]
+
+def is_all_1(arr):
+    flag=True
+    for i in range(len(arr)):
+        if arr[i]!=1:
+            flag=False
+    return flag
+
+is_all_1(arr)
 
 
 
